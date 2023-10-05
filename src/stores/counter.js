@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const product = defineStore('product', () => {
-  const productList = ref([
+const productList = ref([
 {name:'มิตรผล',type:'น้ำตาลทรายขาว',price:25,img:'https://img.th.my-best.com/product_images/f4fa14350e220bf12a76809ab1e9f1fa.jpeg?ixlib=rails-4.3.1&q=70&lossless=0&w=640&h=640&fit=clip&s=7cdb9c949fee325ce0e95eeff08967d9',discription:"หากพูดถึงผู้ผลิตน้ำตาลคุณภาพแล้ว เชื่อว่าหลายคนน่าจะต้องนึกถึง 'มิตรผล' แบรนด์ผลิตน้ำตาลที่ครองใจคนไทยมาอย่างยาวนานกันอย่างแน่นอน ด้วยกระบวนการผลิตที่ได้มาตรฐานระดับโลก ตั้งแต่ขั้นตอนในการคัดสรรอ้อยธรรมชาติ 100% ในการผลิต นำมาผ่านกระบวนการกรองหลายขั้นตอนจนได้น้ำตาลทรายขาวใส ไม่ผ่านการฟอกสี และยังได้เม็ดน้ำตาลมีความละเอียด ละลายน้ำได้ดี"},
 {name:'วังขนาย',type:'น้ำตาลทรายแดง ออร์แกนิค',price:29 ,img:'https://img.th.my-best.com/product_images/0439dad6c9000c84c71ac0beeaf39144.jpeg?ixlib=rails-4.3.1&q=70&lossless=0&w=640&h=640&fit=clip&s=33bf4218cad34206a61f1b2a5ba65b2c',discription:"น้ำตาลออร์แกนิคจากวังขนาย ตอบโจทย์คนรักสุขภาพที่มองหาน้ำตาลที่ใส่ใจในทุกขั้นตอนในการผลิต เริ่มตั้งแต่การคัดสายพันธุ์อ้อยและปลูกด้วยกรรมวิธีเกษตรอินทรีย์ ไม่มีการใช้สารเคมีและบำรุงดินด้วยปุ๋ยจากธรรมชาติ ทำให้ได้น้ำตาลอ้อยที่ปลอดภัย พร้อมใช้ปรุงอาหารและเครื่องดื่ม ไม่เพียงเท่านั้น ยังเป็นแบรนด์ที่ได้รับรองมาตรฐานมากมายจากทั่วโลก"},
 {name:'Equal',type:'สารให้ความหวานแทนน้ำตาล สตีเวีย',price:112,img:'https://img.th.my-best.com/product_images/ca203a020c7eeb4b5f7b028dcd47d4d3.jpeg?ixlib=rails-4.3.1&q=70&lossless=0&w=640&h=640&fit=clip&s=6bf8acf5281b48cb279b4cb546947cd3',discription:'ด้วยเทรนด์รักสุขภาพที่กำลังมาแรงในขณะนี้ ทำให้หลายคนให้มาเลือกใช้สารให้ความหวานแทนน้ำตาลกันมากยิ่งขึ้น ซึ่งทางแบรนด์ Equal เองก็ได้ผลิตสารให้ความหวานสตีเวียเพื่อตอบสนองความต้องการของใครหลายคนเช่นกัน โดยจะใช้สารอิริทริทอล (Erythritol)และสตีวิออลไกลโคไซด์ (Steviol Glycoside) หรือสารสกัดจากหญ้าหวานมาใช้แทนน้ำตาลจากอ้อย'},
@@ -13,10 +13,10 @@ export const product = defineStore('product', () => {
 {name:'ลิน',type:'น้ำตาลทรายขาวบริสุทธิ์ ชนิดขวด',price: 27 ,img:'https://img.th.my-best.com/product_images/d8895fe535ed77daf87e159223697653.jpeg?ixlib=rails-4.3.1&q=70&lossless=0&w=640&h=640&fit=clip&s=3e356a2b0fa79efc8a390fc97e5643a5',discription:'หากคุณกำลังมองหาน้ำตาลทรายขาวบริสุทธิ์ที่มาในบรรจุภัณฑ์ที่ใช้งานง่าย ไม่ต้องเสียเวลาหาภาชนะบรรจุหากใช้ไม่หมด วันนี้เราก็มีน้ำตาลทรายขาวจาก ลิน มาแนะนำค่ะ โดยน้ำตาลตัวนี้เป็นน้ำตาลเกรดพิเศษของทางแบรนด์ที่มีความใสสะอาดมากที่สุด เมื่อนำไปใช้ปรุงอาหารเมนูต่าง ๆ จึงไม่ทำให้อาหารเปลี่ยนสี แถมยังให้รสชาติที่กลมกล่อมละมุน ไม่หวานแหลมจนเกินไปอีกด้วย'}
 ])
 
-  const cartList = ref([]) 
+  const cartList = ref([0,0,0,0,0,0,0,0])
   const orderList = ref([]) 
   const id = ref(0)
-
+  const sum = ref(0)
 
 
   function addcart(i,m){
@@ -31,6 +31,6 @@ export const product = defineStore('product', () => {
     id.value = i
   }
 
-  return { productList, cartList, orderList, id , delcart, idcard, addcart }
+  return { productList, cartList, orderList, id ,sum, delcart, idcard, addcart }
 })
 
