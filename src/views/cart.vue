@@ -19,6 +19,7 @@ function minus(index){
 <template>
  <RouterView></RouterView>
     <Header></Header>
+    <h1 class="m-3">Cart</h1>
 <table class="table">
   <thead>
     <tr>
@@ -55,7 +56,8 @@ function minus(index){
       <h5 class="card-title">สรุปรายการ</h5>
       <p class="card-text">สินค้าทั้งหมด : {{ List.sumcart }} ชิ้น</p>
       <p class="card-text">รวมเงินทั้งหมด : {{ List.sumprice }} บาท</p>
-      <button class="btn btn-success"> ยืนยันคำลั่งซื้อ</button>
+      <RouterLink to="/order"><button class="btn btn-success" @click="List.orderadd(List.cartList, List.sumprice)"> ยืนยันคำลั่งซื้อ</button></RouterLink>
+      <RouterLink to="/" class="m-3"><button class="btn btn-success"> ซื้อของเพิ่ม</button></RouterLink>
     </div>
   </div>
 </div>

@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'  
 import sugar from '../views/card.vue'
 import cart from '../views/cart.vue'
+import order from '../views/order.vue'
+
 
 
 
@@ -22,6 +24,11 @@ const router = createRouter({
     path: '/cart',
     name: 'cart',
     component: cart
+  },
+  {
+    path: '/order',
+    name: 'order',
+    component: order
   },
 ]
 })

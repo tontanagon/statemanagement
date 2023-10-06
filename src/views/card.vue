@@ -18,6 +18,7 @@ function minus(){
 <template>
  <RouterView></RouterView>
     <Header></Header>
+    <h1 class="m-3">Discription</h1>
     <div class="card center">
       <img :src='List[pro.id].img' class="card-img-top" alt="">
       <div class="card-body">
@@ -31,8 +32,7 @@ function minus(){
           <div class="btn btn-light">{{ valuepro }}</div>
           <button type="button" class="btn btn-danger" @click="minus()"><i class="fa-solid fa-minus"></i></button>
         </div>
-        <button class="btn btn-primary" @click="pro.add(List[pro.id].name,List[pro.id].price,valuepro,List[pro.id].img)">add to cart</button>
-        <RouterLink to="/"><button class="btn btn-primary m-2">Menu</button></RouterLink>
+        <RouterLink to="/cart"><button class="btn btn-primary" @click="pro.add(List[pro.id].name,List[pro.id].price,valuepro,List[pro.id].img)">add to cart</button></RouterLink>
 
       </div>  
     </div>

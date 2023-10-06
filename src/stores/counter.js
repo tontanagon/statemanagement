@@ -19,6 +19,12 @@ const productList = ref([
 const cartList = ref([]);
 
 const orderList = ref([]);
+function orderadd(list) {
+  orderList.value.push(list);
+  // Clear the cartList
+  cartList.value = [];
+}
+
 const id = ref(0);
 const sumcart = computed(() => {
   return cartList.value.reduce((accumulator, currentValue) => {
@@ -56,5 +62,5 @@ const delcart = (i) => {
   }
 
 
-  return { productList, cartList, orderList, id ,sumcart , sumprice , delcart, idcard, add }
+  return { productList, cartList, orderList, id ,sumcart , sumprice , delcart, idcard, add, orderadd }
 })

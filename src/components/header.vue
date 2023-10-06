@@ -45,7 +45,7 @@ const List = ref(product());
           </RouterLink>
         </li>
         <li class="nav-item">
-          <RouterLink to="/cart" class="nav-link">
+          <RouterLink to="/order" class="nav-link">
             List
           </RouterLink> 
         </li>

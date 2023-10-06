@@ -10,6 +10,7 @@ const List = product()
 <template>
  <RouterView></RouterView>
     <Header></Header>
+    <h1 class="m-3">Menu</h1>
     <div class="row row-cols-1 row-cols-md-4 g-4 m-3">
   <div class="col" v-for="(i,index) in List.productList" :key="index">
     <div class="card h-100">
