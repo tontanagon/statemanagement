@@ -4,6 +4,8 @@ import Header from '../components/header.vue'
 import { product } from '../stores/counter'
 const List = product()
 const order = ref(List.orderList)
+const orderpri = ref(List.orderprice)
+
 
 </script>
 
@@ -47,9 +49,8 @@ const order = ref(List.orderList)
       </div>
       </td>
       <td >
-        <div v-for="(m,index) in i" :key="index">
-        
-      </div>
+        <div>
+          {{ orderpri[index] }}</div>
       </td>
     </tr>
   </tbody>

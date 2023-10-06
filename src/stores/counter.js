@@ -17,10 +17,12 @@ const productList = ref([
 
  
 const cartList = ref([]);
-
+const orderprice = ref([])
 const orderList = ref([]);
-function orderadd(list) {
+function orderadd(list,summary) {
   orderList.value.push(list);
+  orderprice.value.push(summary);
+
   // Clear the cartList
   cartList.value = [];
 }
@@ -62,5 +64,5 @@ const delcart = (i) => {
   }
 
 
-  return { productList, cartList, orderList, id ,sumcart , sumprice , delcart, idcard, add, orderadd }
+  return { productList, cartList, orderList, id ,sumcart , sumprice , orderprice , delcart, idcard, add, orderadd }
 })
