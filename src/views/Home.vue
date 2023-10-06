@@ -1,18 +1,10 @@
 <script setup>
-import {ref} from 'vue'
 import Header from '../components/header.vue'
 import { product } from '../stores/counter'
 const List = product()
-const valuepro = ref(List.cartList)
 
-function plus(i){
-  valuepro.value[i] ++
-  }
-function minus(i){
-  if(valuepro.value[i] > 0){
-    valuepro.value[i] --
-  }
-  }
+
+
 </script>
 
 <template>
@@ -26,11 +18,6 @@ function minus(i){
         <h5 class="card-title">{{ i.name }}</h5>
         <span class="card-text ">ประเภท : {{ i.type }}</span><br>
         <span class="card-text ">ราคา : {{ i.price }} บาท</span><br><br>
-        <div class="btn-group me-2" role="group" aria-label="Second group">
-          <button type="button" class="btn btn-primary" @click="plus(index)"><i class="fa-solid fa-plus"></i></button>
-          <div class="btn btn-light">{{ valuepro[index]}}</div>
-          <button type="button" class="btn btn-danger" @click="minus(index)"><i class="fa-solid fa-minus"></i></button>
-        </div>
         <RouterLink to="/sugar" class="card-text "><button class="card-text btn btn-primary" @:click="List.idcard(index)">รายละเอียด</button></RouterLink>
       </div>
     </div>

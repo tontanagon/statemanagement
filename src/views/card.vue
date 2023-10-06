@@ -4,7 +4,15 @@ import { ref } from 'vue'
 import { product } from '../stores/counter'
 const pro = ref(product())
 const List = pro.value.productList
-
+const valuepro = ref(0)
+function plus(){
+  valuepro.value ++
+  }
+function minus(){
+  if(valuepro.value > 0){
+    valuepro.value --
+  }
+  }
 </script>
 
 <template>
@@ -16,17 +24,26 @@ const List = pro.value.productList
         <h5 class="card-title">{{ List[pro.id].name }}
           <small class="text-body-secondary card-text">{{ List[pro.id].type }}</small>
         </h5>
-        
-        <span class="card-text"><h5>รายละเอียด</h5>  {{ List[pro.id].discription }}</span><br>
+        <span class="card-text"><h5>รายละเอียด</h5>  {{ List[pro.id].discription }}</span><br><br>
         <h5 class="card-text">ราคา : {{ List[pro.id].price }} บาท</h5>
-      </div>
+        <div class="btn-group me-2" role="group" aria-label="Second group">
+          <button type="button" class="btn btn-primary" @click="plus()"><i class="fa-solid fa-plus"></i></button>
+          <div class="btn btn-light">{{ valuepro }}</div>
+          <button type="button" class="btn btn-danger" @click="minus()"><i class="fa-solid fa-minus"></i></button>
+        </div>
+        <button class="btn btn-primary" @click="pro.add(List[pro.id].name,List[pro.id].price,valuepro,List[pro.id].img)">add to cart</button>
+        <RouterLink to="/"><button class="btn btn-primary m-2">Menu</button></RouterLink>
+
+      </div>  
     </div>
+
 </template>
 
 <style scoped>
-.center {
+.center{
+  margin-top: 10px;
   margin-left: 35%;
   margin-right: 25%;
-  max-width: 600px;
+  max-width: 550px;
 }
 </style>

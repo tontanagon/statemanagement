@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import Home from '../views/Home.vue'  
 import sugar from '../views/card.vue'
+import cart from '../views/cart.vue'
+
 
 
 const router = createRouter({
@@ -15,7 +17,13 @@ const router = createRouter({
     path: '/sugar',
     name: 'sugar',
     component: sugar
-  },]
+  },
+  {
+    path: '/cart',
+    name: 'cart',
+    component: cart
+  },
+]
 })
 
 export default router
